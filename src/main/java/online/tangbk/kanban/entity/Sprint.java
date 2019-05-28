@@ -11,23 +11,19 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Entity
-@Table(name = "sprint")
+@ToString(exclude = { "userStorys" })
 public class Sprint extends BaseDataModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	@OneToOne(targetEntity = ProgramIteration.class)
-	private ProgramIteration pi;
-
 	@Column
 	private int seq;
 	@Column

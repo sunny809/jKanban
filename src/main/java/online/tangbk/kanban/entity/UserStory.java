@@ -4,15 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Entity
-@Table(name = "user_story")
+@ToString(exclude = { "assigned" })
 public class UserStory {
 	@Id
 	private long id;
@@ -21,11 +21,8 @@ public class UserStory {
 	@Column
 	private String description;
 	@Column
-	private int storyPoint;
-	@Column
 	private Status status;
 	@OneToOne(targetEntity = User.class)
 	private User assigned;
-	@Column
-	private int featureId;
+
 }

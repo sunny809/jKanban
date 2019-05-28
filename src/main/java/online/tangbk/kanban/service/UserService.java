@@ -2,25 +2,24 @@ package online.tangbk.kanban.service;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import online.tangbk.kanban.domain.model.UserVo;
 import online.tangbk.kanban.entity.User;
+import online.tangbk.kanban.repository.UserRepository;
 
 @Service
-public class UserService extends BaseService<User> {
+public class UserService implements BaseService<UserVo> {
 
-	public UserService(JpaRepository<User, Long> repository) {
-		super(repository);
-	}
+	UserRepository repository;
 
 	@Override
-	public void add(User t) {
+	public void add(UserVo t) {
 		repository.save(t);
 	}
 
 	@Override
-	public void update(User t) {
+	public void update(UserVo t) {
 		repository.save(t);
 	}
 
@@ -36,7 +35,7 @@ public class UserService extends BaseService<User> {
 	}
 
 	@Override
-	public List<User> list() {
+	public List<UserVo> list() {
 		return repository.findAll();
 	}
 

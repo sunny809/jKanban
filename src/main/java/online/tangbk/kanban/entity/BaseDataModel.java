@@ -9,15 +9,15 @@ public abstract class BaseDataModel {
 	@Column
 	Date createdAt;
 
-	@Column()
+	@Column
 	String createRef;
 
 	@Column
 	Date lastUpdateAt;
 
-	@Column()
+	@Column
 	String lastUpdateRef;
 
-	@Column()
+	@Column
 	boolean isDelete;
 }

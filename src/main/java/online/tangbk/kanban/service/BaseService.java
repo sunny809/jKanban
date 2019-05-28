@@ -2,27 +2,16 @@ package online.tangbk.kanban.service;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+public interface BaseService<T> {
 
-import lombok.extern.slf4j.Slf4j;
+	public void add(T t);
 
-@Slf4j
-public abstract class BaseService<T> {
+	public void update(T t);
 
-	JpaRepository<T, Long> repository;
+	public T get(long id);
 
-	public BaseService(JpaRepository<T, Long> repository) {
-		this.repository = repository;
-	}
+	public void delete(long id);
 
-	abstract public void add(T t);
-
-	abstract public void update(T t);
-
-	abstract public T get(long id);
-
-	abstract public void delete(long id);
-
-	abstract public List<T> list();
+	public List<T> list();
 
 }
