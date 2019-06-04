@@ -22,7 +22,7 @@ public class Team extends BaseDataModel {
 	private long id;
 	@Column
 	private String name;
-	@OneToMany()
+	@OneToMany(targetEntity = Developer.class)
 	private List<Developer> member;
 
 }
