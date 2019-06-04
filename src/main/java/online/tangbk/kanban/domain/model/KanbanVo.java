@@ -10,10 +10,15 @@ import online.tangbk.kanban.entity.UserStory;
 public class KanbanVo {
 
 //	user-story pipeline
-	private List<UserStory> backlog;
+//	Todo task
+	private List<UserStory> todo;
+//	working in progress
 	private List<UserStory> ongoing;
+//	Test
 	private List<UserStory> testing;
+//	Review
 	private List<UserStory> done;
+//	Done
 
 	private Sprint currentSprint;
 
