@@ -17,7 +17,4 @@ public class KanbanVo {
 
 	private Sprint currentSprint;
 
-	private List<Developer> working;
-	private List<Developer> onleave;O
-
 }

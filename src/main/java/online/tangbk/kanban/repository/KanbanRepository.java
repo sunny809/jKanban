@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import online.tangbk.kanban.entity.Sprint;
 
 @Repository
-public interface SprintRepository extends JpaRepository<Sprint, Long> {
+public interface KanbanRepository extends JpaRepository<Sprint, Long> {
 
 }

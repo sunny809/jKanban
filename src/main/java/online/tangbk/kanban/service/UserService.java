@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import online.tangbk.kanban.domain.model.UserVo;
-import online.tangbk.kanban.entity.User;
-import online.tangbk.kanban.repository.UserRepository;
+import online.tangbk.kanban.entity.Developer;
+import online.tangbk.kanban.repository.DeveloperRepository;
 
 @Service
 public class UserService implements BaseService<UserVo> {
 
-	UserRepository repository;
+	DeveloperRepository repository;
 
 	@Override
 	public void add(UserVo t) {
@@ -24,7 +24,7 @@ public class UserService implements BaseService<UserVo> {
 	}
 
 	@Override
-	public User get(long id) {
+	public Developer get(long id) {
 		return repository.getOne(id);
 	}
 

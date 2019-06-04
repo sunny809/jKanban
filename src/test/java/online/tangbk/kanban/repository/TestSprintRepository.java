@@ -11,17 +11,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import lombok.extern.slf4j.Slf4j;
-import online.tangbk.kanban.entity.User;
+import online.tangbk.kanban.entity.Developer;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
 public class TestSprintRepository {
 
-	static List<User> userList = new ArrayList<>();
+	static List<Developer> userList = new ArrayList<>();
 
 	@Autowired
-	SprintRepository repo;
+	KanbanRepository repo;
 
 	@BeforeClass
 	public static void prepareData() {

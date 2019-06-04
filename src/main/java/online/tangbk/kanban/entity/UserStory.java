@@ -22,7 +22,7 @@ public class UserStory {
 	private String description;
 	@Column
 	private Status status;
-	@OneToOne(targetEntity = User.class)
-	private User assigned;
+	@OneToOne(targetEntity = Developer.class)
+	private Developer assigned;
 
 }

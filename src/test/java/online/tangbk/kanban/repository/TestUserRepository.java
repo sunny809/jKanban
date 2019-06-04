@@ -12,17 +12,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import lombok.extern.slf4j.Slf4j;
-import online.tangbk.kanban.entity.User;
+import online.tangbk.kanban.entity.Developer;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
 public class TestUserRepository {
 
-	static List<User> userList = new ArrayList<>();
+	static List<Developer> userList = new ArrayList<>();
 
 	@Autowired
-	UserRepository repo;
+	DeveloperRepository repo;
 
 	@BeforeClass
 	public static void prepareData() {
@@ -33,17 +33,17 @@ public class TestUserRepository {
 
 	static void buildUserStoryList() {
 
-		User user = new User();
+		Developer user = new Developer();
 		user.setFirstName("1st user fistname");
 		user.setLastName("1st user lastname");
 		userList.add(user);
 
-		user = new User();
+		user = new Developer();
 		user.setFirstName("2nd user fistname");
 		user.setLastName("2nd user lastname");
 		userList.add(user);
 
-		user = new User();
+		user = new Developer();
 		user.setFirstName("3rd user fistname");
 		user.setLastName("3rd user lastname");
 		userList.add(user);
@@ -51,7 +51,7 @@ public class TestUserRepository {
 
 	@Test
 	public void add() {
-		for (User user : userList) {
+		for (Developer user : userList) {
 			repo.save(user);
 
 		}
@@ -63,8 +63,8 @@ public class TestUserRepository {
 
 	@Test
 	public void get() {
-		List<User> userList = repo.findAll();
-		for (User user : userList) {
+		List<Developer> userList = repo.findAll();
+		for (Developer user : userList) {
 			log.info("user:" + user.toString());
 		}
 	}

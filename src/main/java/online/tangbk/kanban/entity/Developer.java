@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Entity
-public class User extends BaseDataModel {
+public class Developer extends BaseDataModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,5 +21,7 @@ public class User extends BaseDataModel {
 	private String firstName;
 	@Column
 	private String lastName;
+	@Column
+	private String emailAddress;
 
 }
