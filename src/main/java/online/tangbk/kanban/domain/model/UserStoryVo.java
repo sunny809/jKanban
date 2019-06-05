@@ -9,5 +9,5 @@ public class UserStoryVo {
 	private String description;
 	private int storyPoint;
 	private StatusVo status;
-	private UserVo user;
+	private DeveloperVo user;
 }

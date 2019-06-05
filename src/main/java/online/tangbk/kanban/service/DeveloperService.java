@@ -4,22 +4,22 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import online.tangbk.kanban.domain.model.UserVo;
+import online.tangbk.kanban.domain.model.DeveloperVo;
 import online.tangbk.kanban.entity.Developer;
 import online.tangbk.kanban.repository.DeveloperRepository;
 
 @Service
-public class UserService implements BaseService<UserVo> {
+public class DeveloperService implements BaseService<DeveloperVo> {
 
 	DeveloperRepository repository;
 
 	@Override
-	public void add(UserVo t) {
+	public void add(DeveloperVo t) {
 		repository.save(t);
 	}
 
 	@Override
-	public void update(UserVo t) {
+	public void update(DeveloperVo t) {
 		repository.save(t);
 	}
 
@@ -35,7 +35,7 @@ public class UserService implements BaseService<UserVo> {
 	}
 
 	@Override
-	public List<UserVo> list() {
+	public List<DeveloperVo> list() {
 		return repository.findAll();
 	}
 

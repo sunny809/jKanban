@@ -17,7 +17,7 @@ import online.tangbk.kanban.entity.Developer;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
-public class TestUserRepository {
+public class TestDeveloperRepository {
 
 	static List<Developer> userList = new ArrayList<>();
 

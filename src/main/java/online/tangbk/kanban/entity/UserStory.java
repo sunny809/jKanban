@@ -1,5 +1,7 @@
 package online.tangbk.kanban.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,5 +26,9 @@ public class UserStory {
 	private Status status;
 	@OneToOne(targetEntity = Developer.class)
 	private Developer assigned;
+	@Column
+	private Date startDate;
+	@Column
+	private Date completeDate;
 
 }
