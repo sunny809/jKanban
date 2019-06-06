@@ -1,5 +1,7 @@
 package online.tangbk.kanban.repository;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,7 @@ import online.tangbk.kanban.entity.Developer;
 @Slf4j
 public class TestDeveloperRepository {
 
-	static List<Developer> userList = new ArrayList<>();
+	static List<Developer> developerList = new ArrayList<>();
 
 	@Autowired
 	DeveloperRepository repo;
@@ -33,25 +35,25 @@ public class TestDeveloperRepository {
 
 	static void buildUserStoryList() {
 
-		Developer user = new Developer();
-		user.setFirstName("1st user fistname");
-		user.setLastName("1st user lastname");
-		userList.add(user);
+		Developer developer = new Developer();
+		developer.setFirstName("1st user fistname");
+		developer.setLastName("1st user lastname");
+		developerList.add(developer);
 
-		user = new Developer();
-		user.setFirstName("2nd user fistname");
-		user.setLastName("2nd user lastname");
-		userList.add(user);
+		developer = new Developer();
+		developer.setFirstName("2nd user fistname");
+		developer.setLastName("2nd user lastname");
+		developerList.add(developer);
 
-		user = new Developer();
-		user.setFirstName("3rd user fistname");
-		user.setLastName("3rd user lastname");
-		userList.add(user);
+		developer = new Developer();
+		developer.setFirstName("3rd user fistname");
+		developer.setLastName("3rd user lastname");
+		developerList.add(developer);
 	}
 
 	@Test
 	public void add() {
-		for (Developer user : userList) {
+		for (Developer user : developerList) {
 			repo.save(user);
 
 		}
@@ -64,8 +66,10 @@ public class TestDeveloperRepository {
 	@Test
 	public void get() {
 		List<Developer> userList = repo.findAll();
+		assertNotNull(userList);
+		assertNotEquals(0, userList.size());
 		for (Developer user : userList) {
-			log.info("user:" + user.toString());
+			
 		}
 	}
 

@@ -9,6 +9,7 @@ import online.tangbk.kanban.entity.Developer;
 import online.tangbk.kanban.repository.DeveloperRepository;
 
 @Service
+
 public class DeveloperService implements BaseService<DeveloperVo> {
 
 	DeveloperRepository repository;
