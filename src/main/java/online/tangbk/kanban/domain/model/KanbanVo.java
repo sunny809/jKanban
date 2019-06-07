@@ -3,20 +3,20 @@ package online.tangbk.kanban.domain.model;
 import java.util.List;
 
 import lombok.Data;
-import online.tangbk.kanban.entity.UserStory;
+import online.tangbk.kanban.entity.Task;
 
 @Data
 public class KanbanVo {
 
 //	user-story pipeline
 //	Todo task
-	private List<UserStory> todo;
+	private List<Task> todo;
 //	working in progress
-	private List<UserStory> ongoing;
+	private List<Task> ongoing;
 //	Test
-	private List<UserStory> testing;
+	private List<Task> testing;
 //	Review
-	private List<UserStory> done;
+	private List<Task> done;
 
 
 }

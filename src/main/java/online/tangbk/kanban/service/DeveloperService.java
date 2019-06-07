@@ -2,6 +2,7 @@ package online.tangbk.kanban.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ma.glasnost.orika.MapperFacade;
@@ -15,6 +16,7 @@ import online.tangbk.kanban.repository.DeveloperRepository;
 
 public class DeveloperService implements BaseService<DeveloperVo> {
 
+	@Autowired
 	private DeveloperRepository repository;
 
 	private MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();

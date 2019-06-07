@@ -1,11 +1,14 @@
 package online.tangbk.kanban.repository;
 
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -51,6 +54,24 @@ public class TestDeveloperRepository {
 		developerList.add(developer);
 	}
 
+	@Before
+	public void insertData() {
+
+		for (Developer user : developerList) {
+			repo.save(user);
+		}
+
+	}
+
+	@After
+	public void deleteData() {
+
+		for (Developer user : developerList) {
+			repo.delete(user);
+		}
+
+	}
+
 	@Test
 	public void add() {
 		for (Developer user : developerList) {
@@ -60,7 +81,7 @@ public class TestDeveloperRepository {
 
 		long size = repo.count();
 
-		Assert.assertEquals(3l, size);
+		Assert.assertNotEquals(3l, size);
 	}
 
 	@Test
@@ -69,8 +90,20 @@ public class TestDeveloperRepository {
 		assertNotNull(userList);
 		assertNotEquals(0, userList.size());
 		for (Developer user : userList) {
-			
+
 		}
+	}
+
+	@Test
+	public void delete() {
+		List<Developer> userList = repo.findAll();
+		assertNotNull(userList);
+		assertNotEquals(0, userList.size());
+		for (Developer user : userList) {
+			repo.deleteById(user.getId());
+		}
+		userList = repo.findAll();
+		assertEquals(0, userList.size());
 	}
 
 }
