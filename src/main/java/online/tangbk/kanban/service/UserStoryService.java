@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import online.tangbk.kanban.entity.Task;
-import online.tangbk.kanban.repository.UserStoryRepository;
+import online.tangbk.kanban.repository.TaskRepository;
 
 @Service
 public class UserStoryService implements BaseService<Task> {
 
 	@Autowired
-	private UserStoryRepository repository;
+	private TaskRepository repository;
 
 	@Override
 	public void add(Task t) {

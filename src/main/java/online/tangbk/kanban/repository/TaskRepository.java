@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import online.tangbk.kanban.entity.Task;
 
 @Repository
-public interface UserStoryRepository extends JpaRepository<Task, Long> {
+public interface TaskRepository extends JpaRepository<Task, Long> {
 
 }
