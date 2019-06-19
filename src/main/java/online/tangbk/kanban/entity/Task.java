@@ -30,7 +30,7 @@ public class Task {
 	private String description;
 	@Column
 	private Status status;
-	@OneToOne(targetEntity = Developer.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToOne(targetEntity = Developer.class, fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	private Developer assigned;
 	@Column
 	private Date startDate;
